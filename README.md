@@ -1,10 +1,3 @@
 # 你好 #
-# Hello #
-# こんにちは #
-# Hallo #
-# Привет #
-# Bonjour #
-# สวัสดี #
-# 안녕하십니까 #
-# Olá #
-# Hola #
+# Hi #
+![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=stephen-zeng)
