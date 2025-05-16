@@ -11,5 +11,6 @@
 </div>
 
 ## Why 0x535A 🧐
-+ `0x53` -> `83` -> `S` -> `Stephen`
-+ `0x5a` -> `90` -> `Z` -> `Zeng`
++ `0x53` -> `83` -> `S` -> `Stephen` - in ASCII
++ `0x5A` -> `90` -> `Z` -> `Zeng` - in ASCII
++ `0x535A` -> `U+535A` -> `博 (erudite)` - in Unicode
