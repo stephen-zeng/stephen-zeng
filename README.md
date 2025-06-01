@@ -10,7 +10,7 @@
   <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=stephen-zeng&layout=compact&theme=gotham&exclude_repo=img,file&hide_border=true">
 </div>
 
-## Why 0x535A 🧐
+## Why 0x535a 🧐
 + `0x53` -> `83` -> `S` -> `Stephen` - in ASCII
 + `0x5a` -> `90` -> `Z` -> `Zeng` - in ASCII
 + `0x535a` -> `U+535A` -> `博 (erudite)` - in Unicode
