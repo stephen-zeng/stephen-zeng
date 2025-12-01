@@ -3,7 +3,6 @@
 + Hello
 + こんにちは
 
-# About Me
 # Still learning 🤯
 ![](https://gh-readme-stats-alpha-blush.vercel.app/api?username=stephen-zeng&theme=gotham&show_icons=true&hide_border=true)
 
