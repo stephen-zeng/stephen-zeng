@@ -5,10 +5,7 @@
 
 # About Me
 # Still learning 🤯
-<div style="display: flex; justify-content: center;align-items: center;">
-  <img src="https://gh-readme-stats-alpha-blush.vercel.app/api?username=stephen-zeng&theme=gotham&show_icons=true&hide_border=true">
-  <img src="https://gh-readme-stats-alpha-blush.vercel.app/api/top-langs/?username=stephen-zeng&layout=compact&theme=gotham&exclude_repo=img,file&hide_border=true">
-</div>
+![](https://gh-readme-stats-alpha-blush.vercel.app/api?username=stephen-zeng&theme=gotham&show_icons=true&hide_border=true)
 
 ## Why 0x535a 🧐
 + `0x53` -> `83` -> `S` -> `Stephen` - in ASCII
