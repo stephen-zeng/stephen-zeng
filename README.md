@@ -3,9 +3,6 @@
 + Hello
 + こんにちは
 
-# Still learning 🤯
-![](https://gh-readme-stats-alpha-blush.vercel.app/api?username=stephen-zeng&theme=gotham&show_icons=true&hide_border=true)
-
 ## Why 0x535a 🧐
 + `0x53` -> `83` -> `S` -> `Stephen` - in ASCII
 + `0x5a` -> `90` -> `Z` -> `Zeng` - in ASCII
