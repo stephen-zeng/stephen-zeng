@@ -1,0 +1,61 @@
+name: generate snake animation
+
+on:
+  # 每天 00:00 UTC 运行（GitHub Actions 的 cron 使用 UTC）
+  schedule:
+    - cron: "0 0 * * *"
+  # 允许手动运行
+  workflow_dispatch:
+  # 可选：推送到默认分支时也触发（按需保留/删除）
+  push:
+    branches:
+      - main
+      # 如果你的默认分支是 master，请改为：
+      # - master
+
+jobs:
+  generate:
+    # 需要对仓库内容有写权限，便于提交生成的 SVG
+    permissions:
+      contents: write
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    env:
+      # 把输出目录与目标目录分开：先生成到 dist/，再移动到目标位置
+      BUILD_DIR: dist
+      # ←←← 如果你的 metrics.svg 不在根目录，请把 . 改成相同目录路径（如 .github/metrics）
+      TARGET_DIR: .
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # 生成亮/暗两套 SVG（使用 Platane/snk 的 svg-only 版本）
+      - name: Generate github-contribution-grid-snake.svg
+        uses: Platane/snk/svg-only@v3
+        with:
+          github_user_name: ${{ github.repository_owner }}
+          outputs: |
+            ${BUILD_DIR}/github-contribution-grid-snake.svg
+            ${BUILD_DIR}/github-contribution-grid-snake-dark.svg?palette=github-dark
+      # ^ 官方 README 推荐写法与参数（palette 等）见项目文档。[3](https://goobar.dev/manually-triggering-github-actions-workflows/)
+
+      # 把生成物拷贝到与 metrics.svg 相同的位置
+      - name: Move files into target directory
+        run: |
+          mkdir -p "${TARGET_DIR}"
+          cp "${BUILD_DIR}"/github-contribution-grid-snake*.svg "${TARGET_DIR}/"
+
+      # 将变更提交回当前分支（仅提交这两个 SVG）
+      - name: Commit generated SVGs (use same PAT as metrics)
+        uses: EndBug/add-and-commit@v9
+        with:
+          add: |
+            ./github-contribution-grid-snake.svg
+            ./github-contribution-grid-snake-dark.svg
+          message: "chore: update contribution snake SVGs"
+          default_author: github_actions
+        env:
+          # 复用你为 lowlighter/metrics 设置的同名密钥
+          GITHUB_TOKEN: ${{ secrets.METRICS_TOKEN }}
